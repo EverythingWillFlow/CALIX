@@ -2,27 +2,34 @@
 
 This repository provides a reproducible reference implementation of the paper:
 
+> **CALIX: Closed-loop Adaptive Learning Intelligence for eXplainable Multi-Agent Systems**
 
-## 1\. Project Structure
+The repository contains the core CALIX implementation, benchmark setup, baseline implementations, experimental scripts, evaluation tools, and generated outputs required to reproduce the experiments reported in the paper.
+
+> **Reproducibility note.** No synthetic or placeholder commit identifiers are used in this README. Benchmark revisions are pinned using official repository tags, official repository commit identifiers, or official Hugging Face dataset revisions. Before reproducing the experiments, verify the pinned revision with the corresponding official source and use `git checkout` (or the equivalent dataset revision) rather than a floating `main` branch.
+
+---
+
+## 1. Project Structure
 
 ```text
 CALIX/
 ├── calix/                              # Core algorithm package
 │   ├── calix.py                        # Closed-loop main loop (paper Algorithm 1)
-│   ├── state.py                        # Behavior-aware state encoder phi\\\_xi (Algorithm 2)
-│   ├── graph.py                        # Dynamic interaction graph G\\\_t and evolution operator Phi\\\_G
-│   ├── memory.py                       # Historical memory H\\\_t, Top-k retrieval, update Phi\\\_H
+│   ├── state.py                        # Behavior-aware state encoder phi_xi (Algorithm 2)
+│   ├── graph.py                        # Dynamic interaction graph G_t and evolution operator Phi_G
+│   ├── memory.py                       # Historical memory H_t, Top-k retrieval, update Phi_H
 │   ├── policy.py                       # Candidate policies and encoding function psi(.)
-│   ├── qnetwork.py                     # Q-network Q\\\_w with GPU/CPU backend,
+│   ├── qnetwork.py                     # Q-network Q_w with GPU/CPU backend,
 │   │                                   # target network, and Adam optimizer
 │   ├── backend.py                      # Compute-backend selection
 │   │                                   # CUDA 12.2 via CuPy with CPU fallback
 │   ├── replay.py                       # Experience replay buffer D
-│   ├── llm.py                          # g\\\_LLM: OpenAI-compatible client
+│   ├── llm.py                          # g_LLM: OpenAI-compatible client
 │   ├── agents.py                       # Six-role multi-agent execution and fusion
 │   ├── reward.py                       # Composite reward:
-│   │                                   # r = alpha\\\*r\\\_task + beta\\\*r\\\_eff + lambda\\\*r\\\_coord
-│   ├── environment.py                  # Benchmark environment E(x\\\_t, y\\\_t)
+│   │                                   # r = alpha*r_task + beta*r_eff + lambda*r_coord
+│   ├── environment.py                  # Benchmark environment E(x_t, y_t)
 │   ├── provenance.py                   # Decision-provenance records and PC/DF/TS metrics
 │   ├── embedding.py                    # Deterministic 768-d text embedding
 │   └── baselines.py                    # Executors for the nine baseline frameworks
@@ -31,12 +38,12 @@ CALIX/
 │   └── default.yaml                    # Default configuration
 │
 ├── data/
-│   ├── prepare\\\_data.py                 # Official benchmark download and preprocessing
+│   ├── prepare_data.py                 # Official benchmark download and preprocessing
 │   └── benchmarks/                     # Local benchmark data and metadata
 │
 ├── prompts/                            # Version-controlled prompt templates
-│   ├── candidate\\\_generation.txt        # Candidate-policy generation g\\\_LLM
-│   ├── policy\\\_decomposition.txt        # Policy decomposition c\\\* -> {u^i}
+│   ├── candidate_generation.txt        # Candidate-policy generation g_LLM
+│   ├── policy_decomposition.txt        # Policy decomposition c* -> {u^i}
 │   ├── fusion.txt                      # Output fusion y = Fusion(y^1, ..., y^N)
 │   └── agents/                         # Six role prompts
 │       ├── planner.txt
@@ -48,17 +55,17 @@ CALIX/
 │
 ├── experiments/                        # Experiment scripts
 │   │                                   # 1:1 correspondence with paper tables/figures
-│   ├── run\\\_main.py                     # Main comparison table + learning-curve data
-│   ├── run\\\_rl\\\_curve.py                 # RL learning-curve generation
-│   ├── run\\\_ablation.py                 # Component ablation
-│   ├── run\\\_agent\\\_ablation.py           # Leave-one-agent-out analysis
-│   ├── run\\\_sensitivity.py              # Hyperparameter sensitivity
+│   ├── run_main.py                     # Main comparison table + learning-curve data
+│   ├── run_rl_curve.py                 # RL learning-curve generation
+│   ├── run_ablation.py                 # Component ablation
+│   ├── run_agent_ablation.py           # Leave-one-agent-out analysis
+│   ├── run_sensitivity.py              # Hyperparameter sensitivity
 │   │                                   # (lr / gamma / tau / K)
-│   ├── run\\\_dynamic.py                  # Dynamic-environment robustness
-│   ├── run\\\_provenance.py               # Provenance metrics PC / DF / TS
-│   ├── run\\\_scalability.py              # Scalability and computational cost
-│   ├── run\\\_failure.py                  # Failure cases and recovery analysis
-│   └── run\\\_all.py                      # One-command runner for all experiments
+│   ├── run_dynamic.py                  # Dynamic-environment robustness
+│   ├── run_provenance.py               # Provenance metrics PC / DF / TS
+│   ├── run_scalability.py              # Scalability and computational cost
+│   ├── run_failure.py                  # Failure cases and recovery analysis
+│   └── run_all.py                      # One-command runner for all experiments
 │
 ├── output/                             # Experiment outputs
 │   ├── tables/                         # Generated tables
@@ -68,16 +75,16 @@ CALIX/
 │   └── models/                         # Saved models/checkpoints
 │
 ├── tests/
-│   └── test\\\_calix.py                   # Unit tests: embedding, Q-network,
+│   └── test_calix.py                   # Unit tests: embedding, Q-network,
 │                                       # reward, environment, and main loop
 │
 ├── requirements.txt
 └── README.md
 ```
 
-\---
+---
 
-## 2\. Dependencies and Installation
+## 2. Dependencies and Installation
 
 ### 2.1 Dependencies
 
@@ -110,7 +117,7 @@ python -m venv .venv
 #### Windows
 
 ```bash
-.venv\\\\Scripts\\\\activate
+.venv\Scripts\activate
 ```
 
 #### Linux/macOS
@@ -149,18 +156,18 @@ device: cuda   # Require GPU execution and raise an error
 device: cpu    # Force the NumPy CPU backend.
 ```
 
-\---
+---
 
-# 3\. Benchmark Setup
+## 3. Benchmark Setup
 
-## 3.1 Official Data and Code Revisions
+### 3.1 Official Data and Code Revisions
 
 The benchmark versions are pinned to explicit official tags, releases, or
 dataset revisions. We do not use invented or manually expanded commit IDs.
 For Git repositories, the exact source revision used in a reproduction run
 should be recorded with `git rev-parse HEAD`.
 
-### AgentBench
+#### AgentBench
 
 CALIX uses the original **AgentBench v0.2** protocol rather than the newer
 AgentBench FC (Function Calling) version.
@@ -181,8 +188,8 @@ Official source:
 Clone and checkout the official tag:
 
 ```bash
-git clone https://github.com/THUDM/AgentBench.git third\\\_party/AgentBench
-cd third\\\_party/AgentBench
+git clone https://github.com/THUDM/AgentBench.git third_party/AgentBench
+cd third_party/AgentBench
 git checkout v0.2
 ```
 
@@ -211,19 +218,19 @@ conda create -n agent-bench python=3.9
 conda activate agent-bench
 pip install -r requirements.txt
 docker ps
-python -m src.start\\\_task -a
+python -m src.start_task -a
 python -m src.assigner
 ```
 
 The original v0.2 release contains eight environments, including OS, DB, KG,
 DCG, LTP, HH/ALFWorld, WS/WebShop, and WB/Mind2Web.
 
-> \\\*\\\*Important:\\\*\\\* Do not use the current `main` branch when reproducing the
+> **Important:** Do not use the current `main` branch when reproducing the
 > original AgentBench experiments. The current `main` branch contains the
 > AgentBench FC implementation. Using it would evaluate a different benchmark
 > protocol from the original AgentBench v0.2.
 
-### GAIA
+#### GAIA
 
 GAIA is distributed through a gated Hugging Face dataset. The official
 October 2025 revision converted the dataset to Parquet-backed splits.
@@ -231,18 +238,18 @@ October 2025 revision converted the dataset to Parquet-backed splits.
 Set the Hugging Face token:
 
 ```bash
-export HF\\\_TOKEN=<your-huggingface-token>
+export HF_TOKEN=<your-huggingface-token>
 ```
 
 Use the verified dataset revision:
 
 ```bash
 python -c "
-from huggingface\\\_hub import snapshot\\\_download
+from huggingface_hub import snapshot_download
 
-snapshot\\\_download(
-    repo\\\_id='gaia-benchmark/GAIA',
-    repo\\\_type='dataset',
+snapshot_download(
+    repo_id='gaia-benchmark/GAIA',
+    repo_type='dataset',
     revision='682dd723ee1e1697e00360edccf2366dc8418dd9'
 )
 "
@@ -256,23 +263,23 @@ snapshot\\\_download(
 The GAIA dataset is gated to reduce contamination and data leakage. Do not
 redistribute the validation or test set in a crawlable repository.
 
-### WebArena
+#### WebArena
 
 Use the official **WebArena v0.2.0** release.
 
 Clone the canonical repository:
 
 ```bash
-git clone https://github.com/web-arena-x/webarena.git third\\\_party/webarena
-cd third\\\_party/webarena
+git clone https://github.com/web-arena-x/webarena.git third_party/webarena
+cd third_party/webarena
 git checkout v0.2.0
 ```
 
 Initialize the environment:
 
 ```bash
-bash environment\\\_docker/setup.sh
-docker compose -f environment\\\_docker/docker-compose.yml up -d
+bash environment_docker/setup.sh
+docker compose -f environment_docker/docker-compose.yml up -d
 ```
 
 Official version information:
@@ -294,7 +301,7 @@ and store the resulting full SHA in the experiment log.
 The WebArena maintainers describe `v0.2.0` as the relatively stable benchmark
 version and recommend it for reproducing the benchmark results.
 
-### SWE-bench
+#### SWE-bench
 
 Use the official **SWE-bench v4.1.0** release.
 
@@ -318,8 +325,8 @@ identifier `726c546`. We intentionally do not expand this short SHA manually.
 For source-level reproducibility, the full commit is resolved by Git:
 
 ```bash
-git clone https://github.com/SWE-bench/SWE-bench.git third\\\_party/SWE-bench
-cd third\\\_party/SWE-bench
+git clone https://github.com/SWE-bench/SWE-bench.git third_party/SWE-bench
+cd third_party/SWE-bench
 git checkout v4.1.0
 git rev-parse HEAD
 ```
@@ -328,37 +335,37 @@ Download the benchmark split:
 
 ```bash
 python -c "
-from datasets import load\\\_dataset
+from datasets import load_dataset
 
-ds = load\\\_dataset(
+ds = load_dataset(
     'princeton-nlp/SWE-bench',
     split='test'
 )
 
-ds.to\\\_json('data/benchmarks/swebench\\\_test.jsonl')
+ds.to_json('data/benchmarks/swebench_test.jsonl')
 "
 ```
 
 Prepare benchmark images:
 
 ```bash
-python -m swebench.harness.prepare\\\_images \\\\
+python -m swebench.harness.prepare_images \
     --dataset princeton-nlp/SWE-bench
 ```
 
-> \\\*\\\*Important:\\\*\\\* The SWE-bench dataset revision and evaluation harness version
+> **Important:** The SWE-bench dataset revision and evaluation harness version
 > are separate reproducibility dimensions. Record both in the experiment log.
 
-\---
+---
 
-## 3.2 Docker Environment Startup
+### 3.2 Docker Environment Startup
 
-|Benchmark|Environment / Startup Command|
-|-|-|
-|AgentBench v0.2|`python -m src.start\\\_task -a`|
-|WebArena v0.2.0|`docker compose -f third\\\_party/webarena/environment\\\_docker/docker-compose.yml up -d`|
-|SWE-bench v4.1.0|`python -m swebench.harness.run\\\_evaluation --dataset princeton-nlp/SWE-bench --predictions\\\_path <patch\\\_file>`|
-|GAIA|No Docker required; use the official benchmark evaluation procedure|
+| Benchmark | Environment / Startup Command |
+| - | - |
+| AgentBench v0.2 | `python -m src.start_task -a` |
+| WebArena v0.2.0 | `docker compose -f third_party/webarena/environment_docker/docker-compose.yml up -d` |
+| SWE-bench v4.1.0 | `python -m swebench.harness.run_evaluation --dataset princeton-nlp/SWE-bench --predictions_path <patch_file>` |
+| GAIA | No Docker required; use the official benchmark evaluation procedure |
 
 Ensure that the Docker daemon is running before starting AgentBench or
 WebArena.
@@ -367,24 +374,24 @@ For SWE-bench, allocate sufficient disk space for benchmark images and
 associated artifacts. A practical working environment should reserve at
 least **120 GB** of free disk space.
 
-\---
+---
 
-## 3.3 API Key Configuration
+### 3.3 API Key Configuration
 
 All evaluated methods use the same configured LLM backend.
 
 Set:
 
 ```bash
-export OPENAI\\\_API\\\_KEY=<your-openai-key>
-export OPENAI\\\_BASE\\\_URL=https://api.openai.com/v1
-export HF\\\_TOKEN=<your-huggingface-token>
+export OPENAI_API_KEY=<your-openai-key>
+export OPENAI_BASE_URL=https://api.openai.com/v1
+export HF_TOKEN=<your-huggingface-token>
 ```
 
 For OpenHands, additionally configure:
 
 ```bash
-export OPENHANDS\\\_CONFIG=<path-to-config.toml>
+export OPENHANDS_CONFIG=<path-to-config.toml>
 ```
 
 The model used in the paper is:
@@ -395,24 +402,24 @@ gpt-4o-2024-05-13
 
 All baseline configurations should use the same model and decoding parameters specified by the experiment configuration.
 
-\---
+---
 
-## 3.4 Official Evaluator Invocation
+### 3.4 Official Evaluator Invocation
 
-|Benchmark|Evaluator|Example Command|
-|-|-|-|
-|AgentBench|Official task workers|`python -m agentbench.evaluate --task <task\\\_id> --trajectory <traj.json>`|
-|GAIA|Official benchmark validator|`python -m gaia\\\_official\\\_benchmark.validate --answer <answer> --task <task\\\_id>`|
-|WebArena|`evaluation\\\_harness`|`python -m evaluation\\\_harness.evaluate --config <config.json> --trajectory <traj.json>`|
-|SWE-bench|`swebench.harness`|`python -m swebench.harness.run\\\_evaluation --predictions\\\_path <patch\\\_file> --instance\\\_ids <id>`|
+| Benchmark | Evaluator | Example Command |
+| - | - | - |
+| AgentBench | Official task workers | `python -m agentbench.evaluate --task <task_id> --trajectory <traj.json>` |
+| GAIA | Official benchmark validator | `python -m gaia_official_benchmark.validate --answer <answer> --task <task_id>` |
+| WebArena | `evaluation_harness` | `python -m evaluation_harness.evaluate --config <config.json> --trajectory <traj.json>` |
+| SWE-bench | `swebench.harness` | `python -m swebench.harness.run_evaluation --predictions_path <patch_file> --instance_ids <id>` |
 
 Each evaluator returns the benchmark-native success criterion.
 
 For cross-benchmark aggregation, benchmark-native success outcomes are mapped to the unified **Task Success Rate (TSR)** metric defined in the paper.
 
-\---
+---
 
-## 3.5 Baseline Implementations
+### 3.5 Baseline Implementations
 
 Baseline systems should be installed from their official repositories or
 official package releases. The exact version or commit used for each baseline
@@ -421,121 +428,75 @@ must be pinned before the final evaluation and recorded in the experiment log.
 The table below intentionally does not contain placeholder commit identifiers.
 A placeholder such as `b1a2c3d` must never be used in a reproducibility record.
 
-|Baseline|Official Repository / Provider|Version / Revision|
-|-|-|-|
-|GPT-4o Direct|OpenAI API|gpt-4o-2024-05-13|
-|ReAct|`ysymyth/ReAct`|官方仓库无版本标签，使用提交历史中的稳定状态|
-|CAMEL|`camel-ai/camel`|v0.2.91a0|
-|AutoGen|`microsoft/autogen`|v0.7.2|
-|AgentVerse|`OpenBMB/AgentVerse`|v0.1.8.1|
-|MetaGPT|`geekan/MetaGPT`|v0.8.0|
-|ChatDev|`OpenBMB/ChatDev`|v1.1.6|
-|SWE-agent|`princeton-nlp/SWE-agent`|v1.1.0|
-|OpenHands|`All-Hands-AI/OpenHands`|v1.21.0|
+| Baseline | Official Repository / Provider | Version / Revision |
+| - | - | - |
+| GPT-4o Direct | OpenAI API | gpt-4o-2024-05-13 |
+| ReAct | `ysymyth/ReAct` | No official release tag; pin a stable commit from the repository history and record its full SHA |
+| CAMEL | `camel-ai/camel` | v0.2.91a0 |
+| AutoGen | `microsoft/autogen` | v0.7.2 |
+| AgentVerse | `OpenBMB/AgentVerse` | v0.1.8.1 |
+| MetaGPT | `geekan/MetaGPT` | v0.8.0 |
+| ChatDev | `OpenBMB/ChatDev` | v1.1.6 |
+| SWE-agent | `princeton-nlp/SWE-agent` | v1.1.0 |
+| OpenHands | `All-Hands-AI/OpenHands` | v1.21.0 |
 
-## 
+**Example Installation**
 
-## 
-
-\### Example Installation
-
-
-
-\#### CAMEL
-
-
+#### CAMEL
 
 ```bash
-
 pip install camel-ai==0.2.91a0
-
 ```
 
-
-
-\#### AutoGen
-
-
+#### AutoGen
 
 ```bash
-
 pip install autogen==0.7.2
-
 ```
 
-
-
-\#### AgentVerse
-
-
+#### AgentVerse
 
 ```bash
-
 pip install agentverse==0.1.8.1
-
 ```
 
-
-
-\#### MetaGPT
-
-
+#### MetaGPT
 
 ```bash
-
 pip install metagpt==0.8.0
-
 ```
 
-
-
-\#### ChatDev
-
-
+#### ChatDev
 
 ```bash
+git clone https://github.com/OpenBMB/ChatDev.git third_party/ChatDev
 
-git clone https://github.com/OpenBMB/ChatDev.git third\_party/ChatDev
-
-cd third\_party/ChatDev
+cd third_party/ChatDev
 
 git checkout v1.1.6
-
 ```
 
-
-
-\#### SWE-agent
-
-
+#### SWE-agent
 
 ```bash
+git clone https://github.com/SWE-agent/SWE-agent.git third_party/SWE-agent
 
-git clone https://github.com/SWE-agent/SWE-agent.git third\_party/SWE-agent
-
-cd third\_party/SWE-agent
+cd third_party/SWE-agent
 
 git checkout v1.1.0
-
 ```
 
-
-
-\#### OpenHands
-
-
+#### OpenHands
 
 ```bash
+git clone https://github.com/All-Hands-AI/OpenHands.git third_party/OpenHands
 
-git clone https://github.com/All-Hands-AI/OpenHands.git third\_party/OpenHands
-
-cd third\_party/OpenHands
+cd third_party/OpenHands
 
 git checkout v1.21.0
-
 ```
 
-## 3.6 Installing Official Evaluators
+### 3.6 Installing Official Evaluators
 
 ```bash
 pip install datasets
@@ -546,28 +507,28 @@ For locally cloned benchmark repositories that expose installable Python
 packages:
 
 ```bash
-pip install -e third\\\_party/webarena
-pip install -e third\\\_party/AgentBench
+pip install -e third_party/webarena
+pip install -e third_party/AgentBench
 ```
 
 Use each benchmark's official installation instructions when additional
 system dependencies, Docker images, environment variables, or services are
 required.
 
-# 4\. Running the Evaluation
+## 4. Running the Evaluation
 
 After completing the benchmark setup, run:
 
 ```bash
-python experiments/run\\\_real\\\_benchmarks.py \\\\
-    --benchmark agentbench gaia webarena swebench \\\\
+python experiments/run_real_benchmarks.py \
+    --benchmark agentbench gaia webarena swebench \
     --seeds 2025 2026 2027 2028 2029
 ```
 
 The script invokes the configured benchmark evaluators and writes the resulting TSR values to:
 
 ```text
-output/tables/real\\\_results.csv
+output/tables/real_results.csv
 ```
 
 Before treating the generated results as final paper results, check that:
@@ -578,14 +539,14 @@ Before treating the generated results as final paper results, check that:
 4. the same task subset and split are used for every compared method;
 5. the output logs and task-level evaluation results are retained.
 
-\---
+---
 
-# 5\. One-Command Reproduction
+## 5. One-Command Reproduction
 
 Run the complete experimental protocol:
 
 ```bash
-python experiments/run\\\_all.py
+python experiments/run_all.py
 ```
 
 The experiment scripts are designed to operate independently. Existing outputs are not automatically recomputed, allowing long-running evaluations to be divided across multiple sessions.
@@ -595,80 +556,81 @@ Individual experiments can also be run separately.
 ### Main Experiments
 
 ```bash
-python experiments/run\\\_main.py
+python experiments/run_main.py
 ```
 
 ### RL Learning Curve
 
 ```bash
-python experiments/run\\\_rl\\\_curve.py
+python experiments/run_rl_curve.py
 ```
 
 ### Component Ablation
 
 ```bash
-python experiments/run\\\_ablation.py --episodes 200
+python experiments/run_ablation.py --episodes 200
 ```
 
 ### Leave-One-Agent-Out Analysis
 
 ```bash
-python experiments/run\\\_agent\\\_ablation.py
+python experiments/run_agent_ablation.py
 ```
 
 ### Hyperparameter Sensitivity
 
 ```bash
-python experiments/run\\\_sensitivity.py
+python experiments/run_sensitivity.py
 ```
 
 ### Dynamic-Environment Robustness
 
 ```bash
-python experiments/run\\\_dynamic.py
+python experiments/run_dynamic.py
 ```
 
 ### Provenance Analysis
 
 ```bash
-python experiments/run\\\_provenance.py
+python experiments/run_provenance.py
 ```
 
 ### Scalability Analysis
 
 ```bash
-python experiments/run\\\_scalability.py
+python experiments/run_scalability.py
 ```
 
 ### Failure and Recovery Analysis
 
 ```bash
-python experiments/run\\\_failure.py
+python experiments/run_failure.py
 ```
 
-\---
+---
 
-# 6\. Reproducibility Protocol
+## 6. Reproducibility Protocol
 
 For every final run, create a machine-readable environment record
 containing at least the following fields:
 
 ```text
 benchmark
-benchmark\\\_tag\\\_or\\\_revision
-resolved\\\_commit\\\_sha
-baseline\\\_name
-baseline\\\_version\\\_or\\\_commit
+benchmark_tag_or_revision
+resolved_commit_sha
+baseline_name
+baseline_version_or_commit
 model
 seed
-task\\\_split
-evaluator\\\_version
+task_split
+evaluator_version
 timestamp
 ```
 
-For Git repositories, `resolved\\\_commit\\\_sha` must be copied from the actual
+For Git repositories, `resolved_commit_sha` must be copied from the actual
 checkout using `git rev-parse HEAD`. For package-based evaluators, record the
 installed package version and, where available, the package file checksum.
+
 The reproduction protocol fixes the following dimensions:
 
 * benchmark repository or dataset identifier;
@@ -688,9 +650,9 @@ For every final experiment run, the exact environment should be recoverable from
 
 A reproduction result should not be considered version-controlled when any benchmark or baseline is evaluated from a moving `main` branch without recording the commit used.
 
-\---
+---
 
-# 7\. Output Files
+## 7. Output Files
 
 Experiment results are stored under:
 
@@ -707,16 +669,16 @@ The generated outputs are intended to support reconstruction of the tables and f
 
 For auditability, retain the task-level outputs and evaluation logs used to produce aggregate metrics rather than storing only the final summary tables.
 
-\---
+---
 
-# 8\. Version Verification
+## 8. Version Verification
 
 For every Git-based dependency, resolve the exact revision from the actual
 checkout:
 
 ```bash
 git fetch --all --tags
-git checkout <PINNED\\\_TAG\\\_OR\\\_COMMIT>
+git checkout <PINNED_TAG_OR_COMMIT>
 git rev-parse HEAD
 ```
 
@@ -725,7 +687,7 @@ Record the resulting full SHA in the experiment log.
 ### AgentBench
 
 ```bash
-cd third\\\_party/AgentBench
+cd third_party/AgentBench
 git checkout v0.2
 git describe --tags --always
 git rev-parse HEAD
@@ -734,7 +696,7 @@ git rev-parse HEAD
 ### WebArena
 
 ```bash
-cd third\\\_party/webarena
+cd third_party/webarena
 git checkout v0.2.0
 git rev-parse HEAD
 ```
@@ -744,7 +706,7 @@ The official release page identifies `v0.2.0` with short commit `e32b71e`.
 ### SWE-bench
 
 ```bash
-cd third\\\_party/SWE-bench
+cd third_party/SWE-bench
 git checkout v4.1.0
 git rev-parse HEAD
 ```
@@ -755,9 +717,9 @@ The official release page identifies `v4.1.0` with short commit `726c546`.
 
 ```bash
 python -c "
-from huggingface\\\_hub import HfApi
+from huggingface_hub import HfApi
 
-repo = HfApi().dataset\\\_info(
+repo = HfApi().dataset_info(
     'gaia-benchmark/GAIA',
     revision='682dd723ee1e1697e00360edccf2366dc8418dd9'
 )
@@ -770,6 +732,25 @@ This verification procedure prevents a README from depending on a manually
 constructed SHA. Official tags/releases identify the intended benchmark
 version, while the actual local checkout determines the exact full revision.
 
-\---
+---
 
+## 9. Citation
 
+If you use CALIX in your research, please cite the corresponding paper:
+
+```bibtex
+@article{calix,
+  title   = {CALIX: Closed-loop Adaptive Learning Intelligence for eXplainable Multi-Agent Systems},
+  author  = {Author Names},
+  journal = {Journal/Conference Name},
+  year    = {2026}
+}
+```
+
+---
+
+## 10. License
+
+Please refer to the repository license file for the applicable terms of use.
+
+Benchmark datasets, benchmark environments, and third-party baseline frameworks remain subject to their respective licenses and access conditions. Follow the official terms for each external resource.
