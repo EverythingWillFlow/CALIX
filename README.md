@@ -2,13 +2,6 @@
 
 This repository provides a reproducible reference implementation of the paper:
 
-> \\\*\\\*CALIX: Closed-loop Adaptive Learning Intelligence for eXplainable Multi-Agent Systems\\\*\\\*
-
-The repository contains the core CALIX implementation, benchmark setup, baseline implementations, experimental scripts, evaluation tools, and generated outputs required to reproduce the experiments reported in the paper.
-
-> \\\*\\\*Reproducibility note.\\\*\\\* No synthetic or placeholder commit identifiers are used in this README. Benchmark revisions are pinned using official repository tags, official repository commit identifiers, or official Hugging Face dataset revisions. Before reproducing the experiments, verify the pinned revision with the corresponding official source and use `git checkout` (or the equivalent dataset revision) rather than a floating `main` branch.
-
-\---
 
 ## 1\. Project Structure
 
@@ -779,24 +772,4 @@ version, while the actual local checkout determines the exact full revision.
 
 \---
 
-# 9\. Citation
-
-If you use CALIX in your research, please cite the corresponding paper:
-
-```bibtex
-@article{calix,
-  title   = {CALIX: Closed-loop Adaptive Learning Intelligence for eXplainable Multi-Agent Systems},
-  author  = {Author Names},
-  journal = {Journal/Conference Name},
-  year    = {2026}
-}
-```
-
-\---
-
-# 10\. License
-
-Please refer to the repository license file for the applicable terms of use.
-
-Benchmark datasets, benchmark environments, and third-party baseline frameworks remain subject to their respective licenses and access conditions. Follow the official terms for each external resource.
 
