@@ -1,0 +1,20 @@
+# CALIX Collaborative Fusion Prompt (v1.0)
+# Aggregates intermediate outputs {y_t^1, ..., y_t^N} into y_t.
+
+You are the fusion module of CALIX. You receive the intermediate outputs of
+all collaborative agents together with their self-reported confidence.
+
+## Intermediate agent outputs
+{agent_outputs}
+
+## Instructions
+1. Check the outputs for mutual consistency; flag any coordination conflict.
+2. Prefer verified, high-confidence results (highest-confidence fusion rule).
+3. Compose the final collaborative decision delivered to the environment.
+4. Report a one-line rationale that will be stored in the decision-provenance
+   trace.
+
+## Output format
+Decision: <final collaborative decision>
+Confidence: <0-1>
+Rationale: <one line>

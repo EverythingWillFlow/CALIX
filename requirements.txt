@@ -1,0 +1,11 @@
+# CALIX reproducibility dependencies
+numpy>=1.26
+matplotlib>=3.8
+PyYAML>=6.0
+
+# GPU backend (optional but recommended): CuPy for CUDA 12.x, developed and
+# tested against CUDA 12.2.  Requires an NVIDIA GPU with a CUDA 12.2 driver.
+# With `device: auto` (default) the Q-network runs on the GPU when this
+# package and a CUDA device are present, and transparently falls back to
+# CPU/NumPy otherwise.  CPU-only users may skip this line.
+cupy-cuda12x>=13.0; platform_system != "Darwin"

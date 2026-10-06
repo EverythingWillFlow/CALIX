@@ -1,0 +1,71 @@
+experiment:
+  name: calix_paper
+  seeds: [2025, 2026, 2027, 2028, 2029]
+  output_dir: output
+
+# compute backend for the Q-network: "auto" (GPU if CuPy + CUDA available,
+# else CPU), "cuda" (require GPU, error otherwise), "cpu" (force NumPy).
+# GPU path targets CUDA 12.2 via the cupy-cuda12x package.
+device: auto
+
+embedding:
+  dim: 768
+  hash_bins: 4096
+
+state:
+  dim: 768
+  hidden_dim: 256
+  retrieval_topk: 5
+  encoder_seed: 13
+
+llm:
+  backend: openai 
+  model: gpt-4o
+  temperature: 0.2
+  top_p: 0.95
+  max_output_tokens: 4096
+  num_candidates: 5
+  selection_tau: 0.5
+
+qnetwork:
+  input_dim: 1536
+  hidden_dim: 512
+  lr: 0.0001
+  batch_size: 64
+  updates_per_step: 1                      # one TD update per environment step
+  gamma: 0.95
+  replay_capacity: 100000
+  warmup: 500
+  target_update_interval: 1000
+  grad_clip: 5.0
+
+agents:
+  num_agents: 6
+  roles: [Planner, Researcher, Analyst, Executor, Verifier, Integrator]
+  execution: sequential
+  fusion: highest_confidence
+
+memory:
+  capacity: 1000
+  retrieval_topk: 5
+
+reward:
+  alpha: 1.0
+  beta: 0.1
+  lam: 0.1
+  success_bonus: 5.0
+  coord_budget_per_agent: 20
+
+execution:
+  max_rounds: 20
+  train_episodes: 300
+  eval_tasks_per_benchmark: 50
+
+benchmarks:
+  names: [agentbench, gaia, webarena, swe_bench]
+
+openai:
+  num_strategies: 8
+  llm_candidate_recall: 0.85
+  llm_heuristic_select: 0.55
+  data_seed: 7

@@ -1,0 +1,902 @@
+[
+  {
+    "step": 0,
+    "state": {
+      "l2": 0.3408298438067966
+    },
+    "candidates": [
+      "Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.5844212770462036,
+      1.2816191911697388,
+      1.4592117071151733,
+      1.1990209817886353,
+      1.3970288038253784
+    ],
+    "selected_policy": "Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 0,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents"
+    ],
+    "fused_output": "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.675,
+    "next_state": {
+      "l2": 0.37206148005450934
+    }
+  },
+  {
+    "step": 1,
+    "state": {
+      "l2": 0.37206148005450934
+    },
+    "candidates": [
+      "Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.44121515750885,
+      1.1566603183746338,
+      1.4264527559280396,
+      1.4140928983688354,
+      1.4180399179458618
+    ],
+    "selected_policy": "Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 0,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quic",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quic"
+    ],
+    "fused_output": "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 1: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.17,
+    "next_state": {
+      "l2": 0.3684346373259707
+    }
+  },
+  {
+    "step": 2,
+    "state": {
+      "l2": 0.3684346373259707
+    },
+    "candidates": [
+      "Policy 1: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      0.9880468249320984,
+      1.1639249324798584,
+      1.2634319067001343,
+      1.3376977443695068,
+      1.4281158447265625
+    ],
+    "selected_policy": "Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 4,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents"
+    ],
+    "fused_output": "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.665,
+    "next_state": {
+      "l2": 0.3680651247382464
+    }
+  },
+  {
+    "step": 3,
+    "state": {
+      "l2": 0.3680651247382464
+    },
+    "candidates": [
+      "Policy 1: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.0254168510437012,
+      1.156814694404602,
+      1.5150364637374878,
+      1.2925392389297485,
+      1.386757731437683
+    ],
+    "selected_policy": "Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 2,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reason",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reason"
+    ],
+    "fused_output": "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.16000000000000003,
+    "next_state": {
+      "l2": 0.3691069042335003
+    }
+  },
+  {
+    "step": 4,
+    "state": {
+      "l2": 0.3691069042335003
+    },
+    "candidates": [
+      "Policy 1: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.2035547494888306,
+      1.317947506904602,
+      1.2789826393127441,
+      1.1802421808242798,
+      1.0423861742019653
+    ],
+    "selected_policy": "Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 1,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents"
+    ],
+    "fused_output": "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.655,
+    "next_state": {
+      "l2": 0.37218997960720496
+    }
+  },
+  {
+    "step": 5,
+    "state": {
+      "l2": 0.37218997960720496
+    },
+    "candidates": [
+      "Policy 1: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.2190293073654175,
+      1.268685221672058,
+      0.9485984444618225,
+      1.2593623399734497,
+      1.2843096256256104
+    ],
+    "selected_policy": "Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 4,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quic",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quic"
+    ],
+    "fused_output": "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.15000000000000002,
+    "next_state": {
+      "l2": 0.3721132458223113
+    }
+  },
+  {
+    "step": 6,
+    "state": {
+      "l2": 0.3721132458223113
+    },
+    "candidates": [
+      "Policy 1: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      0.9210118651390076,
+      1.1038637161254883,
+      1.1987756490707397,
+      1.293407678604126,
+      1.0097864866256714
+    ],
+    "selected_policy": "Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 3,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents"
+    ],
+    "fused_output": "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.645,
+    "next_state": {
+      "l2": 0.3743897616336218
+    }
+  },
+  {
+    "step": 7,
+    "state": {
+      "l2": 0.3743897616336218
+    },
+    "candidates": [
+      "Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.226323127746582,
+      1.3624471426010132,
+      1.1672725677490234,
+      1.2027182579040527,
+      1.1192700862884521
+    ],
+    "selected_policy": "Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 1,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reason",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reason"
+    ],
+    "fused_output": "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 2: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.14,
+    "next_state": {
+      "l2": 0.3778102909660394
+    }
+  },
+  {
+    "step": 8,
+    "state": {
+      "l2": 0.3778102909660394
+    },
+    "candidates": [
+      "Policy 1: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.3239473104476929,
+      1.1003433465957642,
+      1.3258992433547974,
+      1.1372841596603394,
+      1.2829357385635376
+    ],
+    "selected_policy": "Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 2,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents"
+    ],
+    "fused_output": "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.635,
+    "next_state": {
+      "l2": 0.3759100978798929
+    }
+  },
+  {
+    "step": 9,
+    "state": {
+      "l2": 0.3759100978798929
+    },
+    "candidates": [
+      "Policy 1: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      0.952182948589325,
+      1.250077486038208,
+      0.9329360723495483,
+      1.2326027154922485,
+      1.3573176860809326
+    ],
+    "selected_policy": "Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 4,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reason",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reason"
+    ],
+    "fused_output": "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.13,
+    "next_state": {
+      "l2": 0.3772266079378069
+    }
+  },
+  {
+    "step": 10,
+    "state": {
+      "l2": 0.3772266079378069
+    },
+    "candidates": [
+      "Policy 1: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      0.9961303472518921,
+      1.2761597633361816,
+      1.2048027515411377,
+      1.2543939352035522,
+      1.4154765605926514
+    ],
+    "selected_policy": "Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 4,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reason",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reason"
+    ],
+    "fused_output": "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reason",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.125,
+    "next_state": {
+      "l2": 0.37791948837631223
+    }
+  },
+  {
+    "step": 11,
+    "state": {
+      "l2": 0.37791948837631223
+    },
+    "candidates": [
+      "Policy 1: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.2262605428695679,
+      1.152342438697815,
+      1.153683066368103,
+      1.292073369026184,
+      0.993092954158783
+    ],
+    "selected_policy": "Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 3,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents"
+    ],
+    "fused_output": "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.6200000000000001,
+    "next_state": {
+      "l2": 0.37692874909828616
+    }
+  },
+  {
+    "step": 12,
+    "state": {
+      "l2": 0.37692874909828616
+    },
+    "candidates": [
+      "Policy 1: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.2815672159194946,
+      1.094774603843689,
+      0.9257764220237732,
+      1.2601932287216187,
+      1.3298743963241577
+    ],
+    "selected_policy": "Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 4,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents p",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents"
+    ],
+    "fused_output": "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents pr",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.615,
+    "next_state": {
+      "l2": 0.37674019393772606
+    }
+  },
+  {
+    "step": 13,
+    "state": {
+      "l2": 0.37674019393772606
+    },
+    "candidates": [
+      "Policy 1: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.1440708637237549,
+      1.042205810546875,
+      1.1634769439697266,
+      1.2648905515670776,
+      1.333880066871643
+    ],
+    "selected_policy": "Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 4,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multipl",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore mult",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multipl",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multip",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multip",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore mult"
+    ],
+    "fused_output": "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'parallel-explore' collaboration strategy. Explore multipl",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.11000000000000001,
+    "next_state": {
+      "l2": 0.37899723989775297
+    }
+  },
+  {
+    "step": 14,
+    "state": {
+      "l2": 0.37899723989775297
+    },
+    "candidates": [
+      "Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.2325689792633057,
+      1.0463545322418213,
+      1.336311936378479,
+      1.2692092657089233,
+      1.204119086265564
+    ],
+    "selected_policy": "Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 2,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quic",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quic"
+    ],
+    "fused_output": "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 3: adopt a 'iterate-refine' collaboration strategy. Produce a quic",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.10500000000000001,
+    "next_state": {
+      "l2": 0.376463529909615
+    }
+  },
+  {
+    "step": 15,
+    "state": {
+      "l2": 0.376463529909615
+    },
+    "candidates": [
+      "Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.1715507507324219,
+      1.3223798274993896,
+      0.9300421476364136,
+      1.20024573802948,
+      1.2041748762130737
+    ],
+    "selected_policy": "Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 1,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quic",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quic"
+    ],
+    "fused_output": "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quic",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.1,
+    "next_state": {
+      "l2": 0.37861779763339837
+    }
+  },
+  {
+    "step": 16,
+    "state": {
+      "l2": 0.37861779763339837
+    },
+    "candidates": [
+      "Policy 1: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      1.157753825187683,
+      1.3193217515945435,
+      1.114953637123108,
+      0.934952437877655,
+      1.1984848976135254
+    ],
+    "selected_policy": "Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 1,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick draft solution, then iteratively refine and revise it through repeated self-critique cycles. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quic",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick d",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quick ",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quic"
+    ],
+    "fused_output": "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 2: adopt a 'iterate-refine' collaboration strategy. Produce a quic",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.095,
+    "next_state": {
+      "l2": 0.3799785926708017
+    }
+  },
+  {
+    "step": 17,
+    "state": {
+      "l2": 0.3799785926708017
+    },
+    "candidates": [
+      "Policy 1: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      0.8943861722946167,
+      1.0626262426376343,
+      1.3060146570205688,
+      0.9315392971038818,
+      1.3662645816802979
+    ],
+    "selected_policy": "Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 4,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reason",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reason"
+    ],
+    "fused_output": "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 5: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.09000000000000001,
+    "next_state": {
+      "l2": 0.379431692885492
+    }
+  },
+  {
+    "step": 18,
+    "state": {
+      "l2": 0.379431692885492
+    },
+    "candidates": [
+      "Policy 1: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'retrieve-then-act' collaboration strategy. First retrieve and gather all relevant external knowledge and context, then act on the consolidated evidence. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      0.9905007481575012,
+      1.3617299795150757,
+      1.140260934829712,
+      1.1348994970321655,
+      1.3455321788787842
+    ],
+    "selected_policy": "Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 1,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multiple independent solution branches in parallel and select the most promising branch. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multipl",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore mult",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multipl",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multip",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore multip",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore mult"
+    ],
+    "fused_output": "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 2: adopt a 'parallel-explore' collaboration strategy. Explore mult",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.085,
+    "next_state": {
+      "l2": 0.3824435786501361
+    }
+  },
+  {
+    "step": 19,
+    "state": {
+      "l2": 0.3824435786501361
+    },
+    "candidates": [
+      "Policy 1: adopt a 'decompose-first' collaboration strategy. Hierarchically decompose the objective into ordered subtasks before any execution, then solve subtask by subtask. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 2: adopt a 'direct-answer' collaboration strategy. Answer directly in a single straightforward step without decomposition or additional tool use. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 4: adopt a 'execute-verify' collaboration strategy. Execute the candidate solution immediately and rely on rigorous verification loops to guarantee correctness. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Policy 5: adopt a 'consensus-vote' collaboration strategy. Let all agents propose solutions independently and aggregate them through consensus voting. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    ],
+    "candidate_embeddings": "K x 768",
+    "q_values": [
+      0.9892612099647522,
+      1.145034909248352,
+      1.5151158571243286,
+      1.2032421827316284,
+      1.3468037843704224
+    ],
+    "selected_policy": "Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+    "selected_index": 2,
+    "sub_policies": {
+      "Planner": "[Planner] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Researcher": "[Researcher] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Analyst": "[Analyst] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Executor": "[Executor] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Verifier": "[Verifier] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi",
+      "Integrator": "[Integrator] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning with external tools, plugins and APIs at every decision point. Assign role-specific subtasks, share intermediate results, and integrate verified outputs. Context: Operate in a knowledge-reasoning environment: analyse the gi"
+    },
+    "agent_outputs": [
+      "Planner intermediate result for sub-policy: [Planner] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reason",
+      "Analyst intermediate result for sub-policy: [Analyst] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasoning",
+      "Executor intermediate result for sub-policy: [Executor] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Verifier intermediate result for sub-policy: [Verifier] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reasonin",
+      "Integrator intermediate result for sub-policy: [Integrator] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reason"
+    ],
+    "fused_output": "Researcher intermediate result for sub-policy: [Researcher] Execute your specialised part of: Policy 3: adopt a 'tool-augmented' collaboration strategy. Augment reason",
+    "next_observation": "Operate in a knowledge-reasoning environment: analyse the given scenario, invoke the appropriate tools, and complete the multi-step objective. Task instance 0070. Suggested handling keywords: vote consensus vote consensus vote consensus. Estimated difficulty level: 0.67.",
+    "reward": 0.08000000000000002,
+    "next_state": {
+      "l2": 0.3800423001907757
+    }
+  }
+]
