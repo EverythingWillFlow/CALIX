@@ -1,4 +1,11 @@
+"""Six-role collaborative agent team with real LLM execution.
 
+Every agent output y_t^i is produced by a real LLM call using the versioned
+role prompt in ``prompts/agents/<role>.txt``.  There are no template outputs,
+no preset confidences and no hardcoded role weights: confidence values are
+self-reported by the LLM (optional ``Confidence:`` line) and the fused
+decision is produced by the real fusion prompt in ``prompts/fusion.txt``.
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,63 +13,55 @@ from dataclasses import dataclass
 import numpy as np
 
 from .embedding import DeterministicEmbedder
+from .llm import OpenAICompatibleLLM
 
 ROLES = ["Planner", "Researcher", "Analyst", "Executor", "Verifier", "Integrator"]
 
-# per-role contribution to fusion quality: removing a role scales the fused
-# output's effectiveness (used by the environment's progress model in the
-# leave-one-agent-out analysis).  Integrator / Executor are the most critical.
-ROLE_IMPORTANCE = {
-    "Planner": 0.93,
-    "Researcher": 0.95,
-    "Analyst": 0.96,
-    "Executor": 0.90,
-    "Verifier": 0.93,
-    "Integrator": 0.85,
-}
+_CONTEXT_CHARS = 600  # per-agent context forwarded to later roles
 
 
 @dataclass
 class AgentOutput:
     role: str
     text: str
-    confidence: float
+    confidence: float | None
     embedding: np.ndarray
 
 
 class CollaborativeAgentTeam:
-    """Sequential execution + highest-confidence fusion."""
+    """Sequential real execution + LLM fusion."""
 
-    def __init__(self, roles: list[str], embedder: DeterministicEmbedder, seed: int = 0):
+    def __init__(self, roles: list[str], embedder: DeterministicEmbedder,
+                 llm: OpenAICompatibleLLM):
         self.roles = roles
         self.embedder = embedder
-        self._rng = np.random.default_rng(seed)
+        self.llm = llm
 
     # -- policy decomposition -------------------------------------------------
     def decompose(self, policy_text: str) -> dict[str, str]:
-        """c_t* -> {u_t^1, ..., u_t^N}: role-specific sub-policies."""
-        return {
-            role: f"[{role}] Execute your specialised part of: {policy_text}"
-            for role in self.roles
-        }
+        """c_t* -> {u_t^1, ..., u_t^N}: role-specific sub-policies (real LLM)."""
+        return self.llm.decompose_policy(policy_text, self.roles)
 
     # -- execution -------------------------------------------------------------
     def execute(
         self,
         sub_policies: dict[str, str],
-        strategy_match: bool,
+        observation: str,
         removed_role: str | None = None,
+        max_tool_calls_per_role: int = 2, protocol: str = "",
     ) -> tuple[list[AgentOutput], dict]:
-
+        """Run each active role on its sub-policy, then fuse the outputs."""
         outputs: list[AgentOutput] = []
         active_roles = [r for r in self.roles if r != removed_role]
+        shared_parts: list[str] = []
+        tool_calls = 0
         for role in active_roles:
-            base = 0.75 if strategy_match else 0.35
-            # role criticality: Executor / Verifier carry more weight
-            if role in ("Executor", "Verifier"):
-                base += 0.05
-            confidence = float(np.clip(base + self._rng.normal(0, 0.08), 0.05, 0.99))
-            text = f"{role} intermediate result for sub-policy: {sub_policies[role][:120]}"
+            shared_context = "\n".join(shared_parts)
+            text, confidence, n_tools = self.llm.run_role(
+                role, sub_policies[role], observation, shared_context,
+                max_tool_calls=max_tool_calls_per_role,
+            )
+            tool_calls += n_tools
             outputs.append(
                 AgentOutput(
                     role=role,
@@ -71,16 +70,22 @@ class CollaborativeAgentTeam:
                     embedding=self.embedder.embed(text),
                 )
             )
-        best = max(outputs, key=lambda o: o.confidence)  # Fusion: highest confidence
+            shared_parts.append(f"[{role}] {text[:_CONTEXT_CHARS]}")
+        fused = self.llm.fuse_outputs(
+            [{"role": o.role, "text": o.text, "confidence": o.confidence}
+             for o in outputs],
+            protocol=protocol,
+        )
         n = len(active_roles)
         info = {
-            "fused_text": best.text,
-            "fused_role": best.role,
-            "confidence": best.confidence,
-            "mean_confidence": float(np.mean([o.confidence for o in outputs])),
+            "fused_text": fused["decision"],
+            "fusion_confidence": fused["confidence"],
+            "fusion_rationale": fused["rationale"],
+            "mean_confidence": float(np.mean(
+                [o.confidence for o in outputs if o.confidence is not None]
+            )) if any(o.confidence is not None for o in outputs) else None,
             "communications": n * (n - 1),   # pairwise intermediate sharing
             "num_active_agents": n,
-            # fusion quality degrades when a role is missing (leave-one-out)
-            "fusion_quality": ROLE_IMPORTANCE.get(removed_role, 1.0) if removed_role else 1.0,
+            "tool_calls": tool_calls,
         }
         return outputs, info

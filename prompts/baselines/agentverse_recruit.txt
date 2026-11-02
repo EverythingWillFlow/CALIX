@@ -1,0 +1,8 @@
+# AgentVerse baseline: role recruitment.
+Task:
+{task}
+
+Propose 3-4 expert roles that should collaborate on this task. One role per
+line, in this exact format:
+
+Role: <name> - <one-line duty>

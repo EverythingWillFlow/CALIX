@@ -1,0 +1,13 @@
+# AutoGen baseline: group-chat manager selecting the next speaker.
+Task:
+{task}
+
+Conversation:
+{transcript}
+
+Available speakers: {roles}
+
+Rules:
+- Reply with exactly one line: Next: <speaker>
+- Use TERMINATE when a final answer is already on the table or the round
+  budget is spent.

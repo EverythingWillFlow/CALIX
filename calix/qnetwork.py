@@ -86,4 +86,30 @@ class QNetwork:
 
         # in-place Adam (on the active backend)
         self._t += 1
-        b1, b2
+        b1, b2, eps = self._beta1, self._beta2, self._eps
+        lr = self.lr
+        for k, g in grads.items():
+            m = self._m[k]
+            v = self._v[k]
+            m *= b1
+            m += (1.0 - b1) * g
+            v *= b2
+            v += (1.0 - b2) * (g * g)
+            m_hat = m / (1.0 - b1 ** self._t)
+            v_hat = v / (1.0 - b2 ** self._t)
+            self._w[k] -= lr * m_hat / (xp.sqrt(v_hat) + eps)
+        return loss
+
+    # -- target-network synchronisation ----------------------------------------
+    def copy_from(self, other: "QNetwork") -> None:
+        """Hard update: copy all parameters from ``other``."""
+        self.set_params(other.get_params())
+
+
+def q_induced_softmax(q_values: np.ndarray, tau: float) -> np.ndarray:
+    """pi_w(c^k | s, C) proportional to exp(Q(s, z^k) / tau) (paper Eq. 13)."""
+    q = np.asarray(q_values, dtype=np.float64)
+    z = q / max(float(tau), 1e-8)
+    z = z - np.max(z)
+    e = np.exp(z)
+    return e / np.sum(e)

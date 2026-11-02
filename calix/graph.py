@@ -19,6 +19,7 @@ class GraphNode:
     name: str
     kind: str  # "agent" | "policy"
     feature: np.ndarray
+    text: str = ""
 
 
 @dataclass
@@ -54,7 +55,8 @@ class DynamicInteractionGraph:
         """
         policy_node = "policy"
         self.nodes[policy_node] = GraphNode(
-            name=policy_node, kind="policy", feature=policy_feature.copy()
+            name=policy_node, kind="policy", feature=policy_feature.copy(),
+            text=policy_text,
         )
         self.edges = [(policy_node, role, "assigned_to") for role in self.roles]
         for role in self.roles:
@@ -74,3 +76,14 @@ class DynamicInteractionGraph:
             return np.zeros(self.feature_dim)
         feats = np.stack([n.feature for n in self.nodes.values()])
         return feats.mean(axis=0)
+
+    # -- textual summary for the LLM prompt -----------------------------------
+    def summary_text(self, max_chars: int = 400) -> str:
+        """Human-readable summary of G_t, injected into the candidate prompt."""
+        agent_nodes = [n for n in self.nodes.values() if n.kind == "agent"]
+        policy = self.nodes.get("policy")
+        parts = [f"{len(agent_nodes)} agent nodes ({', '.join(n.name for n in agent_nodes)})"]
+        parts.append(f"{len(self.edges)} assigned_to edges")
+        if policy is not None and policy.text:
+            parts.append(f"last policy: {policy.text[:max_chars]}")
+        return "; ".join(parts)

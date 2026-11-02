@@ -1,0 +1,14 @@
+# ChatDev baseline: phase chat.
+Phase: {phase}
+You are {role_a}; your counterpart is {role_b}.
+
+Task:
+{task}
+
+Artifact from the previous phase:
+{artifact}
+
+Rules:
+- Produce or revise the artifact for this phase, at most 12 lines.
+- You may write one web tool call as SEARCH[...] or FETCH[...] alone on a line.
+- End with: Artifact: <deliverable>

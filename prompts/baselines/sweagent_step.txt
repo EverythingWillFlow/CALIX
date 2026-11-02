@@ -1,0 +1,14 @@
+# SWE-agent baseline: shell-style action step.
+Task:
+{task}
+
+Interaction history:
+{history}
+
+Rules:
+- Emit exactly ONE action, either a command to run:
+  Command: <command>
+  or the final submission:
+  Submit: <final answer, or a unified diff in a diff block>
+- Never invent command output; only refer to observations you actually
+  received.

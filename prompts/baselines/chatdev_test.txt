@@ -1,0 +1,13 @@
+# ChatDev baseline: testing / verification phase.
+Task:
+{task}
+
+Artifact under test:
+{artifact}
+
+Reviewer notes:
+{review}
+
+Rules:
+- Check the artifact against the task; if it fails, state the fix in one line.
+- Finish with: Final Answer: <answer to the task>

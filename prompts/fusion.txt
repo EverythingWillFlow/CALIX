@@ -14,7 +14,14 @@ all collaborative agents together with their self-reported confidence.
 4. Report a one-line rationale that will be stored in the decision-provenance
    trace.
 
+## Submission protocol of this runtime
+{protocol}
+
 ## Output format
 Decision: <final collaborative decision>
 Confidence: <0-1>
 Rationale: <one line>
+
+When the runtime declares a submission syntax above, the *Decision* line is
+what gets handed to it verbatim, so it must be phrased in that syntax; do not
+replace it with a summary or an explanation.

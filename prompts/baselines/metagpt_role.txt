@@ -1,0 +1,15 @@
+# MetaGPT baseline: SOP assembly-line role.
+You are {role}.
+
+Task:
+{task}
+
+Your responsibility in the pipeline: {duty}
+
+Upstream artifact:
+{artifact}
+
+Rules:
+- Produce only your own artifact, at most 12 lines, in the required format.
+- You may write one web tool call as SEARCH[...] or FETCH[...] alone on a line.
+- End with: Artifact: <your deliverable>

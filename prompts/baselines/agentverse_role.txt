@@ -1,0 +1,13 @@
+# AgentVerse baseline: expert member.
+You are {role}. Your duty: {duty}
+
+Task:
+{task}
+
+Other members' proposals:
+{proposals}
+
+Rules:
+- Give your own independent solution, not a summary of others.
+- You may write one web tool call as SEARCH[...] or FETCH[...] alone on a line.
+- End with: Answer: <your final answer>

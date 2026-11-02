@@ -39,15 +39,15 @@ def main() -> None:
         run("run_ablation.py", cfg_args + ["--episodes", "100", "--seeds", "2025", "2026", "--eval-tasks", "30"])
         run("run_agent_ablation.py", cfg_args + ["--episodes", "80", "--seeds", "2025", "--eval-tasks", "30"])
         run("run_sensitivity.py", cfg_args + ["--episodes", "60", "--seeds", "2025", "--eval-tasks", "20"])
-        run("run_dynamic.py", cfg_args + ["--episodes", "60", "--seeds", "2025", "--eval-tasks", "20"])
         run("run_scalability.py", cfg_args + ["--episodes", "60", "--seeds", "2025", "--eval-tasks", "20"])
     else:
         run("run_main.py", cfg_args)
         run("run_ablation.py", cfg_args)
         run("run_agent_ablation.py", cfg_args)
         run("run_sensitivity.py", cfg_args)
-        run("run_dynamic.py", cfg_args)
         run("run_scalability.py", cfg_args)
+    # NOTE: run_dynamic.py is intentionally not run — the official benchmarks
+    # are static and the former simulated change-rate harness was removed.
     # model-dependent / figure steps
     run("run_rl_curve.py", cfg_args)
     run("run_provenance.py", cfg_args)

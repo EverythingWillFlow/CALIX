@@ -1,0 +1,16 @@
+# OpenHands baseline: CodeAct style step.
+Task:
+{task}
+
+Interaction history:
+{history}
+
+Rules:
+- Emit exactly ONE action, either a program to execute:
+  Code:
+  ```<language>
+  <program>
+  ```
+  or the finish action:
+  Finish: <final answer, or a unified diff in a diff block>
+- Reality check: state only results observed in the observations above.

@@ -1,0 +1,13 @@
+# AgentVerse baseline: group decision.
+Task:
+{task}
+
+Proposals:
+{proposals}
+
+Rules:
+- Select the best-supported proposal or merge them into one consistent answer.
+- No new facts may be introduced here.
+
+Output format:
+Decision: <final answer>
