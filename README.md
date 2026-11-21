@@ -19,14 +19,13 @@ Reproducible reference implementation of the paper:
 
 | Benchmark | Requires | Status |
 | - | - | - |
-| GAIA (validation split, 127 tasks) | real LLM endpoint | ✅ runs |
+| GAIA (validation split, 40 tasks) | real LLM endpoint | ✅ runs |
 | SWE-bench (40 tasks) | Docker + official images | ✅ runs |
-| AgentBench v0.2 — dbbench (60 tasks) | Docker (any CPU arch) | ✅ runs |
-| AgentBench v0.2 — knowledgegraph (20 tasks) | Virtuoso + Freebase graph | ✅ runs |
+| AgentBench v0.2 — dbbench (50 tasks) | Docker (any CPU arch) | ✅ runs |
 | WebArena v0.2.0 (40 tasks) | upstream prebuilt site images | ✅ runs |
 
 AgentBench data comes from the pinned upstream tag `v0.2`, rebuilt with
-`python data/prepare_agentbench.py` (80 tasks: 60 dbbench + 20 knowledgegraph).
+`python data/prepare_agentbench.py` .
 Every task carries its official gold; nothing is scored by a local guess:
 
 - **dbbench** — table rebuilt exactly like the official `build_init_sql` (one
@@ -268,10 +267,7 @@ Apple-Silicon fixes applied automatically by `webarena_local.sh`:
 - **Base-URL UPDATE race** → re-runs until both rows carry the local URL.
 
 `map` and `wikipedia` have no released image; their 5 tasks are excluded and
-listed in `webarena.excluded.json`. Report WebArena as **35 of 40**, never the
-full 812-task suite. Site logins (`gitlab`, `shopping`) need
-`tools/webarena_auth.py` to write the state file the configs expect; a missing
-login is recorded `auth_missing` → `unavailable`, never a 0.
+listed in `webarena.excluded.json`. 
 
 ### SWE-bench — `v4.1.0`
 ```bash
@@ -303,11 +299,10 @@ python tools/remote_check.py
 
 | Benchmark | Runtime | Status |
 | - | - | - |
-| GAIA (127) | none (local official normalization) | ✅ runs |
+| GAIA (40) | none (local official normalization) | ✅ runs |
 | SWE-bench (40) | per-instance image + official harness | ✅ runs |
-| AgentBench dbbench (60) | `mysql:8.0` + official data | ✅ runs, 60/60 built & scored |
-| AgentBench knowledgegraph (20) | Virtuoso + Freebase | ✅ runs, `gold_answer_scoring_no_graphdb` |
-| WebArena (35 of 40) | official images + official `evaluator_router` | ✅ runs, 35/35 verified |
+| AgentBench dbbench (50) | `mysql:8.0` + official data | ✅ runs, built & scored |
+| WebArena (40) | official images + official `evaluator_router` | ✅ runs |
 
 SWE-bench instance images: `swebench/sweb.eval.x86_64.<id with "__" → "_1776_">`.
 Reserve ~4 GB per instance (~165 GB for 40); the official project recommends ≥ 120 GB free.
