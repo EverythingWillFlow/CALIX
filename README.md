@@ -13,7 +13,7 @@ Repository: **https://github.com/EverythingWillFlow/CALIX.git**
 
 Reproducible reference implementation of the paper:
 
-> **CALIX: Closed-loop Adaptive Learning Intelligence for eXplainable Multi-Agent Systems**
+> **CALIX: A Closed-Loop Adaptive Learning Framework for Traceable LLM-Driven Multi-Agent Collaboration**
 
 ## Status: what runs today
 
@@ -83,8 +83,6 @@ The bridge serves `POST /<bench>/reset`, `POST /<bench>/step`,
 observation or score. Address resolves from `$CALIX_EXECUTOR_<NAME>`, then
 `benchmarks.executors.<name>`, then the task file's `executor_url`.
 
-`run_dynamic.py` : the official benchmarks are static,
-so no genuine dynamic-environment robustness measurement exists.
 
 ---
 
