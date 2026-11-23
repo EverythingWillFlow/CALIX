@@ -446,25 +446,6 @@ non-zero.
 ```bash
 .venv/bin/python tools/table_audit.py          # -> output/tables/PROVENANCE_AUDIT.md
 ```
-Per-cell verdicts: `BACKED` (record + agrees + complete), `INCOMPLETE`,
-`CONTRADICTED`, `UNSOURCED`. Exits non-zero unless every cell is `BACKED`.
-Catches (a) tables with no producer — e.g. `dynamic_robustness.md` while
-`run_dynamic.py` raises `NotImplementedError` by design: remove, don't backfill;
-(b) transcribed deviations — a headline TSR with identical mean but drifting std
-across tables indicates manual entry, not independent runs.
-
-```bash
-.venv/bin/python tools/paper_tables.py
-```
-Regenerates (not audits) tables from records: `overall_results.md` (rate + 95%
-Wilson interval + task count), `computational_cost.md`, and
-`appendix_task_records.csv` (the per-task file a reviewer recomputes from).
-Both quote that CSV's SHA-256, the commit, and the graded-task count in their
-footer. De-dup by `(benchmark, method, task_id)`, keeping the later measurement.
-Running the audit after regeneration takes verdicts to 10/12 `BACKED`, 0
-contradicted, 0 unsourced (the 2 `INCOMPLETE` are real gaps).
-
-
 
 ### 4.8 Statistics that match the sample
 Tables used to report `mean ± std` as if across seeds. Now:
