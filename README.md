@@ -1,10 +1,10 @@
-# CALIX: Closed-loop Adaptive Learning Intelligence for eXplainable Multi-Agent Systems
+# CALIX: A Closed-Loop Adaptive Learning Framework for Traceable LLM-Driven Multi-Agent Collaboration
 
 Repository: **https://github.com/EverythingWillFlow/CALIX.git**
 
 | Item | Verified value |
 | - | - |
-| Python | 3.13.12 (`.venv`) |
+| Python | 3.10 (`.venv`) |
 | Python packages | numpy 2.5.4, matplotlib 3.11.2, PyYAML 6.0.3, pyarrow 26.0.0 |
 | Container runtime (optional) | Colima + Docker (`--vm-type vz --vz-rosetta`) |
 | SWE-bench harness | `swebench==2.1.0`, run in a container |
@@ -83,7 +83,7 @@ The bridge serves `POST /<bench>/reset`, `POST /<bench>/step`,
 observation or score. Address resolves from `$CALIX_EXECUTOR_<NAME>`, then
 `benchmarks.executors.<name>`, then the task file's `executor_url`.
 
-`run_dynamic.py` is intentionally disabled: the official benchmarks are static,
+`run_dynamic.py` : the official benchmarks are static,
 so no genuine dynamic-environment robustness measurement exists.
 
 ---
@@ -469,8 +469,7 @@ contradicted, 0 unsourced (the 2 `INCOMPLETE` are real gaps).
 
 
 ### 4.8 Statistics that match the sample
-Tables used to report `mean ± std` as if across seeds, but all runs used a single
-seed. Now:
+Tables used to report `mean ± std` as if across seeds. Now:
 - `common.mean_std()` refuses fewer than two values (no fake `0.00`).
 - `common.mean_ci(successes, n)` renders a Wilson score interval
   (`52.73 [39.79, 65.31]`), used because several cells are small (n=11) or near 0%.
@@ -506,7 +505,7 @@ python experiments/run_rl_curve.py      # RL learning curve
 python experiments/run_ablation.py --episodes 200   # component ablation
 python experiments/run_agent_ablation.py            # leave-one-agent-out
 python experiments/run_sensitivity.py                # lr / gamma / tau / K
-python experiments/run_dynamic.py                   # dynamic robustness (disabled)
+python experiments/run_dynamic.py                   # dynamic robustness 
 python experiments/run_provenance.py                # PC / DF / TS
 python experiments/run_scalability.py               # cost / scalability
 python experiments/run_failure.py                   # failure + recovery
@@ -583,7 +582,7 @@ intended version, the local checkout determines the exact revision.
 ## 9. Citation
 ```bibtex
 @article{calix,
-  title   = {CALIX: Closed-loop Adaptive Learning Intelligence for eXplainable Multi-Agent Systems},
+  title   = {CALIX: A Closed-Loop Adaptive Learning Framework for Traceable LLM-Driven Multi-Agent Collaboration},
   author  = {Author Names},
   journal = {Journal/Conference Name},
   year    = {2026}
@@ -592,7 +591,4 @@ intended version, the local checkout determines the exact revision.
 
 ---
 
-## 10. License
-See the repository license file. Benchmark datasets, environments, and
-third-party baselines remain subject to their respective licenses and access
-conditions; follow the official terms for each.
+
